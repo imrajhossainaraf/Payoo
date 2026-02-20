@@ -1,9 +1,105 @@
 <!doctype html>
-<html lang="en" data-theme="fantasy">
+<html lang="en" data-theme="dark">
   <head>
     <style>
       * {
         font-family: Outfit, sans-serif;
+      }
+      :root {
+        --tech-black: #000000;
+        --tech-white: #ffffff;
+        --tech-gray: #1a1a1a;
+        --tech-gray-light: #2a2a2a;
+        --tech-gray-lighter: #3a3a3a;
+        --tech-red: #ff3333;
+        --tech-green: #00ff66;
+      }
+      
+      /* Glass Morphism Background */
+      body {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        background-attachment: fixed;
+        color: var(--tech-white);
+        min-height: 100vh;
+        position: relative;
+      }
+      
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(0, 255, 102, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(255, 51, 51, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 0;
+      }
+      
+      section {
+        position: relative;
+        z-index: 1;
+      }
+      
+      /* Glass Morphism Card */
+      .card {
+        background: rgba(26, 26, 26, 0.6);
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Glass Morphism Input */
+      .input {
+        background: rgba(42, 42, 42, 0.5);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: var(--tech-white);
+      }
+      .input:focus {
+        background: rgba(42, 42, 42, 0.7);
+        border-color: rgba(0, 255, 102, 0.5);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0, 255, 102, 0.1);
+      }
+      
+      /* Glass Morphism Button */
+      .btn-primary {
+        background: rgba(0, 255, 102, 0.3);
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        border: 1px solid rgba(0, 255, 102, 0.5);
+        color: var(--tech-green);
+        box-shadow: 0 4px 16px 0 rgba(0, 255, 102, 0.2);
+      }
+      .btn-primary:hover {
+        background: rgba(0, 255, 102, 0.4);
+        border-color: rgba(0, 255, 102, 0.7);
+        box-shadow: 0 6px 20px 0 rgba(0, 255, 102, 0.3);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+      }
+      
+      .label {
+        color: var(--tech-white);
+      }
+      
+      /* Notification Glass */
+      .login-notification {
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+      }
+      
+      /* Smooth transitions */
+      * {
+        transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,11 +140,11 @@
       <div class="form w-full max-w-md md:max-w-lg flex-shrink-0">
         <div class="card bg-base-200 w-full shadow-2xl md:ml-0">
           <div class="card-body p-6 md:p-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-black">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-white">
               Welcome Back
             </h2>
             <fieldset class="fieldset w-full">
-              <label class="label text-black font-bold">Mobile Number</label>
+              <label class="label text-white font-bold">Mobile Number</label>
               <input
                 type="text"
                 class="input inp1 w-full rounded-full"
@@ -58,7 +154,7 @@
                 maxlength="11"
               />
 
-              <label class="label text-black font-bold mt-4">4 Digit Pin</label>
+              <label class="label text-white font-bold mt-4">4 Digit Pin</label>
               <input
                 type="password"
                 class="input w-full rounded-full inp2"
@@ -68,7 +164,7 @@
               />
               <button
                 type="submit"
-                class="btn btn1 btn-neutral mt-6 w-full bg-purple-950 rounded-full hover:bg-blue-800 hover:text-white border-0"
+                class="btn btn1 btn-primary mt-6 w-full rounded-full border-0"
               >
                 Login
               </button>
