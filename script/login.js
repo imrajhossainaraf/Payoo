@@ -25,13 +25,13 @@ btn.addEventListener("click", () => {
       localStorage.setItem("userData", JSON.stringify(userData));
       showNotification("Login Successful", "success");
       setTimeout(() => {
-        window.location.href = "/script/dashboard.html";
+        window.location.href = "/script/index.html";
       }, 500);
     } catch (error) {
       console.error("Error saving user data:", error);
       showNotification("Login Successful", "success");
       setTimeout(() => {
-        window.location.href = "dashboard.html";
+        window.location.href = "/script/index.html";
       }, 500);
     }
   } else {

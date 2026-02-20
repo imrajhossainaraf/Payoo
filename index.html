@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en" data-theme="dark">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       * {
         font-family: Outfit, sans-serif;
@@ -12,94 +14,450 @@
         --tech-gray-light: #2a2a2a;
         --tech-gray-lighter: #3a3a3a;
         --tech-red: #ff3333;
+        --tech-red-dark: #cc0000;
+        --tech-purple: #9333ea;
+        --tech-purple-light: #a855f7;
+        --tech-purple-dark: #7e22ce;
+        --tech-purple-glow: #c084fc;
         --tech-green: #00ff66;
+        --tech-green-dark: #00cc52;
       }
-      
-      /* Glass Morphism Background */
+
+      /* Glass Morphism Base */
       body {
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        background: linear-gradient(
+          135deg,
+          #0a0a0a 0%,
+          #1a1a1a 50%,
+          #0a0a0a 100%
+        );
         background-attachment: fixed;
         color: var(--tech-white);
         min-height: 100vh;
         position: relative;
       }
-      
+
       body::before {
-        content: '';
+        content: "";
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: 
-          radial-gradient(circle at 20% 50%, rgba(0, 255, 102, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(255, 51, 51, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 40% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        background:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(147, 51, 234, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(168, 85, 247, 0.12) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 20%,
+            rgba(192, 132, 252, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 80%,
+            rgba(255, 51, 51, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 50%
+          );
         pointer-events: none;
         z-index: 0;
       }
-      
-      section {
+
+      main,
+      nav {
         position: relative;
         z-index: 1;
       }
-      
-      /* Glass Morphism Card */
-      .card {
+
+      /* Glass Morphism Effect */
+      .glass {
+        background: rgba(26, 26, 26, 0.4);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      }
+
+      .glass-strong {
         background: rgba(26, 26, 26, 0.6);
         backdrop-filter: blur(30px) saturate(180%);
         -webkit-backdrop-filter: blur(30px) saturate(180%);
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
       }
-      
-      /* Glass Morphism Input */
-      .input {
-        background: rgba(42, 42, 42, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: var(--tech-white);
-      }
-      .input:focus {
-        background: rgba(42, 42, 42, 0.7);
-        border-color: rgba(0, 255, 102, 0.5);
-        outline: none;
-        box-shadow: 0 0 0 3px rgba(0, 255, 102, 0.1);
-      }
-      
-      /* Glass Morphism Button */
-      .btn-primary {
-        background: rgba(0, 255, 102, 0.3);
+
+      .glass-light {
+        background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px) saturate(180%);
         -webkit-backdrop-filter: blur(10px) saturate(180%);
-        border: 1px solid rgba(0, 255, 102, 0.5);
-        color: var(--tech-green);
-        box-shadow: 0 4px 16px 0 rgba(0, 255, 102, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
+      }
+
+      /* Gradient Cards with Glass */
+      .gradient-card {
+        background: linear-gradient(
+          135deg,
+          rgba(26, 26, 26, 0.6) 0%,
+          rgba(42, 42, 42, 0.6) 100%
+        );
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      }
+
+      .gradient-card-green {
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.4) 0%,
+          rgba(168, 85, 247, 0.4) 100%
+        );
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(192, 132, 252, 0.4);
+        box-shadow:
+          0 8px 32px 0 rgba(147, 51, 234, 0.3),
+          0 0 40px rgba(192, 132, 252, 0.1);
+      }
+
+      .gradient-card-red {
+        background: linear-gradient(
+          135deg,
+          rgba(204, 0, 0, 0.3) 0%,
+          rgba(255, 51, 51, 0.3) 100%
+        );
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 51, 51, 0.3);
+        box-shadow: 0 8px 32px 0 rgba(255, 51, 51, 0.2);
+      }
+
+      .gradient-card-gray {
+        background: linear-gradient(
+          135deg,
+          rgba(42, 42, 42, 0.5) 0%,
+          rgba(58, 58, 58, 0.5) 100%
+        );
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+      }
+
+      .tech-bg-black {
+        background-color: var(--tech-black);
+      }
+      .tech-bg-gray {
+        background-color: var(--tech-gray);
+      }
+      .tech-bg-gray-light {
+        background-color: var(--tech-gray-light);
+      }
+      .tech-text-white {
+        color: var(--tech-white);
+      }
+      .tech-text-green {
+        color: var(--tech-purple-light);
+      }
+      .tech-text-purple {
+        color: var(--tech-purple-light);
+      }
+      .tech-text-red {
+        color: var(--tech-red);
+      }
+      .tech-border {
+        border-color: var(--tech-gray-lighter);
+      }
+
+      /* Cards with Glass */
+      .card {
+        background: rgba(26, 26, 26, 0.6);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0, 0.5),
+          0 0 1px rgba(255, 255, 255, 0.1);
+      }
+
+      /* Buttons with Glass */
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.4) 0%,
+          rgba(168, 85, 247, 0.4) 100%
+        );
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        border: 1px solid rgba(192, 132, 252, 0.6);
+        color: var(--tech-white);
+        box-shadow:
+          0 4px 16px 0 rgba(147, 51, 234, 0.3),
+          0 0 20px rgba(192, 132, 252, 0.2);
+        font-weight: 600;
       }
       .btn-primary:hover {
-        background: rgba(0, 255, 102, 0.4);
-        border-color: rgba(0, 255, 102, 0.7);
-        box-shadow: 0 6px 20px 0 rgba(0, 255, 102, 0.3);
+        background: linear-gradient(
+          135deg,
+          rgba(168, 85, 247, 0.5) 0%,
+          rgba(192, 132, 252, 0.5) 100%
+        );
+        border-color: rgba(192, 132, 252, 0.8);
+        box-shadow:
+          0 6px 24px 0 rgba(147, 51, 234, 0.4),
+          0 0 30px rgba(192, 132, 252, 0.3);
         transform: translateY(-2px);
         transition: all 0.3s ease;
       }
-      
-      .label {
-        color: var(--tech-white);
+
+      .btn-error {
+        background: rgba(255, 51, 51, 0.3);
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        border: 1px solid rgba(255, 51, 51, 0.5);
+        color: var(--tech-red);
+        box-shadow: 0 4px 16px 0 rgba(255, 51, 51, 0.2);
       }
-      
-      /* Notification Glass */
-      .login-notification {
+      .btn-error:hover {
+        background: rgba(255, 51, 51, 0.4);
+        border-color: rgba(255, 51, 51, 0.7);
+        box-shadow: 0 6px 20px 0 rgba(255, 51, 51, 0.3);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+      }
+
+      .btn-ghost {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Badges with Glass */
+      .badge-success {
+        background: rgba(147, 51, 234, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(192, 132, 252, 0.6);
+        color: var(--tech-purple-glow);
+        box-shadow: 0 2px 8px 0 rgba(147, 51, 234, 0.3);
+      }
+      .badge-error {
+        background: rgba(255, 51, 51, 0.3);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 51, 51, 0.5);
+        color: var(--tech-red);
+      }
+
+      /* Navbar with Glass */
+      .navbar {
+        background: rgba(26, 26, 26, 0.75) !important;
+        backdrop-filter: blur(35px) saturate(180%);
+        -webkit-backdrop-filter: blur(35px) saturate(180%);
+        border-bottom: 1px solid rgba(192, 132, 252, 0.2);
+        box-shadow:
+          0 4px 20px 0 rgba(0, 0, 0, 0.4),
+          0 0 1px rgba(192, 132, 252, 0.1);
+      }
+
+      /* Inputs with Glass */
+      .input,
+      .select {
+        background: rgba(42, 42, 42, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--tech-white);
+        font-weight: 500;
+      }
+      .input:focus,
+      .select:focus {
+        background: rgba(42, 42, 42, 0.8);
+        border-color: rgba(192, 132, 252, 0.6);
+        outline: none;
+        box-shadow:
+          0 0 0 3px rgba(147, 51, 234, 0.2),
+          0 0 20px rgba(192, 132, 252, 0.1);
+      }
+
+      /* Progress Bars */
+      .progress-success {
+        background: linear-gradient(
+          90deg,
+          rgba(147, 51, 234, 0.5) 0%,
+          rgba(192, 132, 252, 0.5) 100%
+        );
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+      }
+      .progress-error {
+        background: rgba(255, 51, 51, 0.3);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+
+      /* Modals with Glass */
+      .modal-box {
+        background: rgba(26, 26, 26, 0.85);
+        backdrop-filter: blur(45px) saturate(180%);
+        -webkit-backdrop-filter: blur(45px) saturate(180%);
+        border: 1px solid rgba(192, 132, 252, 0.3);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0, 0.6),
+          0 0 40px rgba(147, 51, 234, 0.2);
+      }
+
+      .modal-backdrop {
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+      }
+
+      /* Dropdowns with Glass */
+      .dropdown-content,
+      .menu {
+        background: rgba(26, 26, 26, 0.8);
         backdrop-filter: blur(30px) saturate(180%);
         -webkit-backdrop-filter: blur(30px) saturate(180%);
-        border: 1px solid rgba(255, 255, 255, 0.15);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
       }
-      
+
+      /* Table with Glass */
+      .table {
+        background: transparent;
+      }
+      .table thead {
+        background: rgba(147, 51, 234, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-bottom: 2px solid rgba(192, 132, 252, 0.3);
+      }
+      .table tbody tr {
+        background: rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.2s ease;
+      }
+      .table tbody tr:hover {
+        background: rgba(147, 51, 234, 0.1);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border-left: 3px solid rgba(192, 132, 252, 0.5);
+      }
+
+      /* Quick Action Cards */
+      .card.bg-base-200 {
+        background: rgba(42, 42, 42, 0.5);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.4);
+        transition: all 0.3s ease;
+      }
+      .card.bg-base-200:hover {
+        background: rgba(42, 42, 42, 0.7);
+        border-color: rgba(192, 132, 252, 0.4);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0, 0.5),
+          0 0 30px rgba(147, 51, 234, 0.2);
+        transform: translateY(-4px);
+      }
+
+      /* Footer with Glass */
+      footer {
+        background: rgba(26, 26, 26, 0.5);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      /* Avatar with Glass */
+      .avatar > div {
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.5) 0%,
+          rgba(192, 132, 252, 0.5) 100%
+        );
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(192, 132, 252, 0.6);
+        box-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
+      }
+
+      /* Notification with Glass */
+      .tech-notification {
+        background: rgba(26, 26, 26, 0.9) !important;
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
+      }
+
+      /* Toggle with Glass */
+      .toggle {
+        background: rgba(42, 42, 42, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .toggle:checked {
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.5) 0%,
+          rgba(192, 132, 252, 0.5) 100%
+        );
+        border-color: rgba(192, 132, 252, 0.6);
+        box-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
+      }
+
+      /* Enhanced Typography */
+      h1,
+      h2,
+      h3 {
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+
+      /* Enhanced Icons */
+      i {
+        filter: drop-shadow(0 0 3px rgba(192, 132, 252, 0.3));
+      }
+
       /* Smooth transitions */
       * {
-        transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          transform 0.3s ease;
+      }
+
+      /* Enhanced Focus States */
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid rgba(192, 132, 252, 0.6);
+        outline-offset: 2px;
+      }
+
+      /* Better Contrast for Text */
+      .text-white {
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
       }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,8 +466,6 @@
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css"
       rel="stylesheet"
@@ -128,51 +484,1161 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="icon" type="image/png" href="logo.png" />
-
-    <title>Payoo | Login</title>
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>Payoo | Dashboard</title>
   </head>
-  <body>
-    <section class="login w-screen min-h-screen flex flex-col md:flex-row items-center justify-center px-4 py-8 md:px-8 md:py-0 gap-8 md:gap-12">
-      <div class="logo flex-shrink-0 w-full md:w-auto">
-        <img src="Logo-full.png" class="w-full max-w-xs md:max-w-md mx-auto md:mx-0" alt="Payoo Logo" />
-      </div>
-      <div class="form w-full max-w-md md:max-w-lg flex-shrink-0">
-        <div class="card bg-base-200 w-full shadow-2xl md:ml-0">
-          <div class="card-body p-6 md:p-8">
-            <h2 class="text-2xl md:text-3xl font-bold text-center mb-6 text-white">
-              Welcome Back
-            </h2>
-            <fieldset class="fieldset w-full">
-              <label class="label text-white font-bold">Mobile Number</label>
-              <input
-                type="text"
-                class="input inp1 w-full rounded-full"
-                placeholder="Enter Your Number"
-                required
-                minlength="11"
-                maxlength="11"
-              />
-
-              <label class="label text-white font-bold mt-4">4 Digit Pin</label>
-              <input
-                type="password"
-                class="input w-full rounded-full inp2"
-                placeholder="Enter 4 Digit"
-                minlength="4"
-                maxlength="4"
-              />
-              <button
-                type="submit"
-                class="btn btn1 btn-primary mt-6 w-full rounded-full border-0"
+  <body class="min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50">
+      <div class="navbar bg-base-100 shadow-[0_0_17px_rgba(255,255,255,0.18)]">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+              <i class="fas fa-bars text-xl"></i>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg"
+            >
+              <li>
+                <a id="navDashboard"
+                  ><i class="fas fa-home mr-2"></i> Dashboard</a
+                >
+              </li>
+              <li>
+                <a id="navAccounts"
+                  ><i class="fas fa-wallet mr-2"></i> My Accounts</a
+                >
+              </li>
+              <li>
+                <a id="navTransactions"
+                  ><i class="fas fa-history mr-2"></i> Transactions</a
+                >
+              </li>
+              <li>
+                <a id="navSettings"><i class="fas fa-cog mr-2"></i> Settings</a>
+              </li>
+              <li>
+                <a id="navSupport"
+                  ><i class="fas fa-headset mr-2"></i> Support</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="navbar-center">
+          <a class="btn btn-ghost text-xl font-bold">
+            <img src="logo.png" class="w-8 h-8 mr-2" alt="Payoo" />
+            Payoo International Ltd.
+          </a>
+        </div>
+        <div class="navbar-end gap-2">
+          <button
+            id="searchBtn"
+            class="btn btn-ghost btn-circle"
+            title="Search"
+          >
+            <i class="fas fa-search text-lg"></i>
+          </button>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+              <div class="indicator">
+                <i class="fas fa-bell text-lg"></i>
+                <span
+                  class="badge badge-xs badge-success indicator-item"
+                ></span>
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="dropdown-content menu bg-base-100 rounded-box z-[1] w-80 p-2 shadow-lg"
+            >
+              <li class="menu-title">
+                <span>Notifications</span>
+              </li>
+              <li>
+                <a>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Payment Received</span>
+                    <span class="text-xs opacity-70">You received $500.00</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a>
+                  <div class="flex flex-col">
+                    <span class="font-semibold">Bill Reminder</span>
+                    <span class="text-xs opacity-70"
+                      >Electricity bill due in 2 days</span
+                    >
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="dropdown dropdown-end">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost btn-circle avatar"
+            >
+              <div
+                class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center"
               >
-                Login
-              </button>
-            </fieldset>
+                <span class="text-lg font-bold">JD</span>
+              </div>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg"
+            >
+              <li class="menu-title">
+                <span>John Doe</span>
+              </li>
+              <li>
+                <a id="profileBtn"><i class="fas fa-user mr-2"></i> Profile</a>
+              </li>
+              <li>
+                <a id="securityBtn"
+                  ><i class="fas fa-shield-alt mr-2"></i> Security</a
+                >
+              </li>
+              <li>
+                <a id="settingsBtn"><i class="fas fa-cog mr-2"></i> Settings</a>
+              </li>
+              <li>
+                <a onclick="window.location.href = 'index.html'">
+                  <i class="fas fa-sign-out-alt mr-2"></i> Log Out
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
-    <script src="script/login.js"></script>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+      <!-- Welcome Section with Balance -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h1 class="text-3xl font-bold text-white mb-2">
+              Welcome back, <span class="tech-text-green">John Doe</span>
+            </h1>
+            <p class="text-sm opacity-70">
+              Manage your finances with ease and security
+            </p>
+          </div>
+          <div class="text-right">
+            <p class="text-sm opacity-70 mb-1">Account Number</p>
+            <p class="text-lg font-semibold">****1234</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account Summary Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <!-- Available Balance Card -->
+        <div class="card gradient-card text-white shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm opacity-90 mb-1">Available Balance</p>
+                <h2 class="text-3xl font-bold">$4,500.00</h2>
+              </div>
+              <div class="bg-white/20 rounded-full p-3">
+                <i class="fas fa-wallet text-2xl"></i>
+              </div>
+            </div>
+            <div class="flex items-center mt-2 text-sm">
+              <i class="fas fa-arrow-up mr-1"></i>
+              <span>+12.5% from last month</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Savings Account Card -->
+        <div class="card gradient-card-green text-white shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm opacity-90 mb-1">Savings Account</p>
+                <h2 class="text-3xl font-bold">$12,350.00</h2>
+              </div>
+              <div class="bg-white/20 rounded-full p-3">
+                <i class="fas fa-piggy-bank text-2xl"></i>
+              </div>
+            </div>
+            <div class="flex items-center mt-2 text-sm">
+              <i class="fas fa-percent mr-1"></i>
+              <span>3.5% APY</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Credit Card Card -->
+        <div class="card gradient-card-red text-white shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm opacity-90 mb-1">Credit Card</p>
+                <h2 class="text-3xl font-bold">$2,450.00</h2>
+              </div>
+              <div class="bg-white/20 rounded-full p-3">
+                <i class="fas fa-credit-card text-2xl"></i>
+              </div>
+            </div>
+            <div class="flex items-center mt-2 text-sm">
+              <i class="fas fa-calendar mr-1"></i>
+              <span>Due in 15 days</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Total Investment Card -->
+        <div class="card gradient-card-gray text-white shadow-xl">
+          <div class="card-body">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm opacity-90 mb-1">Total Investment</p>
+                <h2 class="text-3xl font-bold">$25,800.00</h2>
+              </div>
+              <div class="bg-white/20 rounded-full p-3">
+                <i class="fas fa-chart-line text-2xl"></i>
+              </div>
+            </div>
+            <div class="flex items-center mt-2 text-sm">
+              <i class="fas fa-arrow-up mr-1"></i>
+              <span>+8.2% this month</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Actions Grid -->
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold text-white mb-4">
+          <i class="fas fa-bolt mr-2 tech-text-green"></i>Quick Actions
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <!-- Add Money -->
+          <div
+            id="addMoneyBtn"
+            class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <div class="card-body items-center text-center p-4">
+              <div
+                class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50"
+              >
+                <i class="fas fa-plus-circle text-3xl tech-text-purple"></i>
+              </div>
+              <h3 class="font-semibold">Add Money</h3>
+            </div>
+          </div>
+
+          <!-- Send Money -->
+          <div
+            id="sendMoneyBtn"
+            class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <div class="card-body items-center text-center p-4">
+              <div class="bg-white/10 rounded-full p-4 mb-2">
+                <i class="fas fa-paper-plane text-3xl text-white"></i>
+              </div>
+              <h3 class="font-semibold">Send Money</h3>
+            </div>
+          </div>
+
+          <!-- Cash Out -->
+          <div
+            id="cashOutBtn"
+            class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <div class="card-body items-center text-center p-4">
+              <div
+                class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50"
+              >
+                <i class="fas fa-money-bill-wave text-3xl tech-text-purple"></i>
+              </div>
+              <h3 class="font-semibold">Cash Out</h3>
+            </div>
+          </div>
+
+          <!-- Pay Bill -->
+          <div
+            id="payBillBtn"
+            class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <div class="card-body items-center text-center p-4">
+              <div class="bg-red-500/20 rounded-full p-4 mb-2">
+                <i
+                  class="fas fa-file-invoice-dollar text-3xl tech-text-red"
+                ></i>
+              </div>
+              <h3 class="font-semibold">Pay Bill</h3>
+            </div>
+          </div>
+
+          <!-- Get Bonus -->
+          <div
+            id="getBonusBtn"
+            class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <div class="card-body items-center text-center p-4">
+              <div
+                class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50"
+              >
+                <i class="fas fa-gift text-3xl tech-text-purple"></i>
+              </div>
+              <h3 class="font-semibold">Get Bonus</h3>
+            </div>
+          </div>
+
+          <!-- Transactions -->
+          <div
+            id="viewTransactionsBtn"
+            class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
+          >
+            <div class="card-body items-center text-center p-4">
+              <div class="bg-white/10 rounded-full p-4 mb-2">
+                <i class="fas fa-history text-3xl text-white"></i>
+              </div>
+              <h3 class="font-semibold">Transactions</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Content Grid: Transactions and Statistics -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <!-- Recent Transactions (2/3 width) -->
+        <div class="lg:col-span-2">
+          <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+              <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-bold text-white">
+                  <i class="fas fa-list mr-2 tech-text-green"></i>Recent
+                  Transactions
+                </h2>
+                <button
+                  id="viewAllTransactionsBtn"
+                  class="btn btn-sm btn-primary"
+                >
+                  View All
+                </button>
+              </div>
+              <div class="overflow-x-auto">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Transaction</th>
+                      <th>Type</th>
+                      <th>Amount</th>
+                      <th>Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-3">
+                          <div class="avatar">
+                            <div
+                              class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center"
+                            >
+                              <i class="fas fa-user"></i>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="font-bold">John Smith</div>
+                            <div class="text-sm opacity-50">Money Received</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="badge badge-success">Credit</span>
+                      </td>
+                      <td class="tech-text-green font-semibold">+$500.00</td>
+                      <td>Dec 15, 2024</td>
+                      <td>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-3">
+                          <div class="avatar">
+                            <div
+                              class="w-10 rounded-full bg-red-500 text-white flex items-center justify-center"
+                            >
+                              <i class="fas fa-bolt"></i>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="font-bold">Electricity Bill</div>
+                            <div class="text-sm opacity-50">Bill Payment</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="badge badge-error">Debit</span>
+                      </td>
+                      <td class="tech-text-red font-semibold">-$120.50</td>
+                      <td>Dec 14, 2024</td>
+                      <td>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-3">
+                          <div class="avatar">
+                            <div
+                              class="w-10 rounded-full bg-white text-black flex items-center justify-center"
+                            >
+                              <i class="fas fa-paper-plane"></i>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="font-bold">Sarah Johnson</div>
+                            <div class="text-sm opacity-50">Money Sent</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="badge badge-error">Debit</span>
+                      </td>
+                      <td class="text-red-500 font-semibold">-$250.00</td>
+                      <td>Dec 13, 2024</td>
+                      <td>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-3">
+                          <div class="avatar">
+                            <div
+                              class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center"
+                            >
+                              <i class="fas fa-gift"></i>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="font-bold">Bonus Reward</div>
+                            <div class="text-sm opacity-50">Cashback</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="badge badge-success">Credit</span>
+                      </td>
+                      <td class="tech-text-green font-semibold">+$25.00</td>
+                      <td>Dec 12, 2024</td>
+                      <td>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="flex items-center gap-3">
+                          <div class="avatar">
+                            <div
+                              class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center"
+                            >
+                              <i class="fas fa-plus"></i>
+                            </div>
+                          </div>
+                          <div>
+                            <div class="font-bold">Bank Deposit</div>
+                            <div class="text-sm opacity-50">Add Money</div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <span class="badge badge-success">Credit</span>
+                      </td>
+                      <td class="tech-text-green font-semibold">+$1,000.00</td>
+                      <td>Dec 10, 2024</td>
+                      <td>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Statistics and Security (1/3 width) -->
+        <div class="space-y-6">
+          <!-- Monthly Statistics -->
+          <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+              <h2 class="text-xl font-bold text-white mb-4">
+                <i class="fas fa-chart-pie mr-2 tech-text-green"></i>This Month
+              </h2>
+              <div class="space-y-4">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Income</span>
+                    <span class="text-sm font-semibold tech-text-green"
+                      >$2,500</span
+                    >
+                  </div>
+                  <progress
+                    class="progress progress-success"
+                    value="75"
+                    max="100"
+                  ></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Expenses</span>
+                    <span class="text-sm font-semibold tech-text-red"
+                      >$1,200</span
+                    >
+                  </div>
+                  <progress
+                    class="progress progress-error"
+                    value="45"
+                    max="100"
+                  ></progress>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm">Savings</span>
+                    <span class="text-sm font-semibold tech-text-green"
+                      >$1,300</span
+                    >
+                  </div>
+                  <progress
+                    class="progress progress-info"
+                    value="65"
+                    max="100"
+                  ></progress>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Security Status -->
+          <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+              <h2 class="text-xl font-bold text-white mb-4">
+                <i class="fas fa-shield-alt mr-2 tech-text-green"></i>Security
+                Status
+              </h2>
+              <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle tech-text-green"></i>
+                    <span class="text-sm">Two-Factor Auth</span>
+                  </div>
+                  <span class="badge badge-success badge-sm">Active</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle tech-text-green"></i>
+                    <span class="text-sm">PIN Protection</span>
+                  </div>
+                  <span class="badge badge-success badge-sm">Active</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-check-circle tech-text-green"></i>
+                    <span class="text-sm">Biometric Login</span>
+                  </div>
+                  <span class="badge badge-success badge-sm">Active</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <i class="fas fa-exclamation-circle tech-text-red"></i>
+                    <span class="text-sm">Email Verification</span>
+                  </div>
+                  <span class="badge badge-warning badge-sm">Pending</span>
+                </div>
+              </div>
+              <button
+                id="manageSecurityBtn"
+                class="btn btn-primary btn-sm mt-4 w-full"
+              >
+                <i class="fas fa-cog mr-2"></i>Manage Security
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+              <h2 class="text-xl font-bold text-white mb-4">
+                <i class="fas fa-link mr-2 tech-text-green"></i>Quick Links
+              </h2>
+              <div class="space-y-2">
+                <a
+                  id="statementsBtn"
+                  class="btn btn-ghost justify-start w-full"
+                >
+                  <i class="fas fa-file-invoice mr-2"></i>Statements
+                </a>
+                <a id="cardsBtn" class="btn btn-ghost justify-start w-full">
+                  <i class="fas fa-credit-card mr-2"></i>Cards
+                </a>
+                <a id="privacyBtn" class="btn btn-ghost justify-start w-full">
+                  <i class="fas fa-user-shield mr-2"></i>Privacy Settings
+                </a>
+                <a
+                  id="supportCenterBtn"
+                  class="btn btn-ghost justify-start w-full"
+                >
+                  <i class="fas fa-headset mr-2"></i>Support Center
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Features Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+        <!-- Account Activity -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="text-xl font-bold text-white mb-4">
+              <i class="fas fa-chart-line mr-2 tech-text-green"></i>Account
+              Activity
+            </h2>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center">
+                <span class="text-sm">Transactions Today</span>
+                <span class="font-bold">12</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm">This Week</span>
+                <span class="font-bold">48</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-sm">This Month</span>
+                <span class="font-bold">156</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="text-xl font-bold text-white mb-4">
+              <i class="fas fa-wallet mr-2 tech-text-green"></i>Payment Methods
+            </h2>
+            <div class="space-y-3">
+              <div
+                class="flex items-center justify-between p-2 bg-base-300 rounded"
+              >
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-credit-card tech-text-green"></i>
+                  <span class="text-sm">Visa •••• 1234</span>
+                </div>
+                <span class="badge badge-success badge-sm">Active</span>
+              </div>
+              <div
+                class="flex items-center justify-between p-2 bg-base-300 rounded"
+              >
+                <div class="flex items-center gap-2">
+                  <i class="fas fa-mobile-alt tech-text-green"></i>
+                  <span class="text-sm">Mobile Banking</span>
+                </div>
+                <span class="badge badge-success badge-sm">Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Bills -->
+        <div class="card bg-base-200 shadow-xl">
+          <div class="card-body">
+            <h2 class="text-xl font-bold text-white mb-4">
+              <i class="fas fa-calendar-alt mr-2 tech-text-green"></i>Upcoming
+              Bills
+            </h2>
+            <div class="space-y-3">
+              <div
+                class="flex justify-between items-center p-2 bg-base-300 rounded"
+              >
+                <div>
+                  <p class="text-sm font-semibold">Electricity</p>
+                  <p class="text-xs opacity-70">Due in 2 days</p>
+                </div>
+                <span class="font-bold tech-text-red">$120.50</span>
+              </div>
+              <div
+                class="flex justify-between items-center p-2 bg-base-300 rounded"
+              >
+                <div>
+                  <p class="text-sm font-semibold">Internet</p>
+                  <p class="text-xs opacity-70">Due in 5 days</p>
+                </div>
+                <span class="font-bold tech-text-red">$45.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer footer-center p-4 bg-base-200 text-base-content mt-8">
+      <div>
+        <p class="text-sm opacity-70">
+          © 2024 Payoo International Ltd. All rights reserved.
+        </p>
+        <p class="text-xs opacity-50 mt-1">
+          Secure banking powered by advanced encryption technology
+        </p>
+      </div>
+    </footer>
+
+    <!-- Modals -->
+    <!-- Add Money Modal -->
+    <dialog id="addMoneyModal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-2xl mb-4">
+          <i class="fas fa-plus-circle tech-text-green mr-2"></i>Add Money
+        </h3>
+        <form id="addMoneyForm">
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">Amount</span>
+            </label>
+            <input
+              type="number"
+              id="addMoneyAmount"
+              placeholder="Enter amount"
+              class="input input-bordered w-full"
+              min="1"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">Payment Method</span>
+            </label>
+            <select
+              id="addMoneyMethod"
+              class="select select-bordered w-full"
+              required
+            >
+              <option value="">Select payment method</option>
+              <option value="bank">Bank Transfer</option>
+              <option value="card">Credit/Debit Card</option>
+              <option value="mobile">Mobile Banking</option>
+            </select>
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">PIN</span>
+            </label>
+            <input
+              type="password"
+              id="addMoneyPin"
+              placeholder="Enter 4-digit PIN"
+              class="input input-bordered w-full"
+              maxlength="4"
+              minlength="4"
+              required
+            />
+          </div>
+          <div class="modal-action">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('addMoneyModal').close()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-check mr-2"></i>Add Money
+            </button>
+          </div>
+        </form>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <!-- Send Money Modal -->
+    <dialog id="sendMoneyModal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-2xl mb-4">
+          <i class="fas fa-paper-plane text-white mr-2"></i>Send Money
+        </h3>
+        <form id="sendMoneyForm">
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold"
+                >Recipient Mobile Number</span
+              >
+            </label>
+            <input
+              type="text"
+              id="sendMoneyNumber"
+              placeholder="Enter mobile number"
+              class="input input-bordered w-full"
+              minlength="11"
+              maxlength="11"
+              required
+            />
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">Amount</span>
+            </label>
+            <input
+              type="number"
+              id="sendMoneyAmount"
+              placeholder="Enter amount"
+              class="input input-bordered w-full"
+              min="1"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">PIN</span>
+            </label>
+            <input
+              type="password"
+              id="sendMoneyPin"
+              placeholder="Enter 4-digit PIN"
+              class="input input-bordered w-full"
+              maxlength="4"
+              minlength="4"
+              required
+            />
+          </div>
+          <div class="modal-action">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('sendMoneyModal').close()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane mr-2"></i>Send Money
+            </button>
+          </div>
+        </form>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <!-- Cash Out Modal -->
+    <dialog id="cashOutModal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-2xl mb-4">
+          <i class="fas fa-money-bill-wave tech-text-green mr-2"></i>Cash Out
+        </h3>
+        <form id="cashOutForm">
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">Amount</span>
+            </label>
+            <input
+              type="number"
+              id="cashOutAmount"
+              placeholder="Enter amount"
+              class="input input-bordered w-full"
+              min="1"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">Agent Number</span>
+            </label>
+            <input
+              type="text"
+              id="cashOutAgent"
+              placeholder="Enter agent number"
+              class="input input-bordered w-full"
+              required
+            />
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">PIN</span>
+            </label>
+            <input
+              type="password"
+              id="cashOutPin"
+              placeholder="Enter 4-digit PIN"
+              class="input input-bordered w-full"
+              maxlength="4"
+              minlength="4"
+              required
+            />
+          </div>
+          <div class="alert alert-info mb-4">
+            <i class="fas fa-info-circle"></i>
+            <span>Cash out charge: 1.5% of the amount</span>
+          </div>
+          <div class="modal-action">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('cashOutModal').close()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-check mr-2"></i>Cash Out
+            </button>
+          </div>
+        </form>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <!-- Pay Bill Modal -->
+    <dialog id="payBillModal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-2xl mb-4">
+          <i class="fas fa-file-invoice-dollar tech-text-red mr-2"></i>Pay Bill
+        </h3>
+        <form id="payBillForm">
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">Bill Type</span>
+            </label>
+            <select
+              id="payBillType"
+              class="select select-bordered w-full"
+              required
+            >
+              <option value="">Select bill type</option>
+              <option value="electricity">Electricity</option>
+              <option value="water">Water</option>
+              <option value="gas">Gas</option>
+              <option value="internet">Internet</option>
+              <option value="phone">Phone</option>
+            </select>
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">Account Number</span>
+            </label>
+            <input
+              type="text"
+              id="payBillAccount"
+              placeholder="Enter account number"
+              class="input input-bordered w-full"
+              required
+            />
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">Amount</span>
+            </label>
+            <input
+              type="number"
+              id="payBillAmount"
+              placeholder="Enter amount"
+              class="input input-bordered w-full"
+              min="1"
+              step="0.01"
+              required
+            />
+          </div>
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">PIN</span>
+            </label>
+            <input
+              type="password"
+              id="payBillPin"
+              placeholder="Enter 4-digit PIN"
+              class="input input-bordered w-full"
+              maxlength="4"
+              minlength="4"
+              required
+            />
+          </div>
+          <div class="modal-action">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('payBillModal').close()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-check mr-2"></i>Pay Bill
+            </button>
+          </div>
+        </form>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <!-- Get Bonus Modal -->
+    <dialog id="getBonusModal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-2xl mb-4">
+          <i class="fas fa-gift tech-text-green mr-2"></i>Get Bonus
+        </h3>
+        <div class="text-center mb-6">
+          <div class="text-6xl mb-4">🎁</div>
+          <p class="text-lg mb-2">Claim Your Bonus Reward!</p>
+          <p class="text-sm opacity-70">
+            You have a bonus of
+            <span class="font-bold tech-text-green">$25.00</span> available
+          </p>
+        </div>
+        <form id="getBonusForm">
+          <div class="form-control mb-4">
+            <label class="label">
+              <span class="label-text font-semibold">PIN</span>
+            </label>
+            <input
+              type="password"
+              id="getBonusPin"
+              placeholder="Enter 4-digit PIN"
+              class="input input-bordered w-full"
+              maxlength="4"
+              minlength="4"
+              required
+            />
+          </div>
+          <div class="modal-action">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('getBonusModal').close()"
+            >
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-gift mr-2"></i>Claim Bonus
+            </button>
+          </div>
+        </form>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <!-- Search Modal -->
+    <dialog id="searchModal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-xl mb-4">
+          <i class="fas fa-search mr-2"></i>Search
+        </h3>
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search transactions, accounts, or services..."
+          class="input input-bordered w-full"
+        />
+        <div id="searchResults" class="mt-4 space-y-2"></div>
+        <div class="modal-action">
+          <button
+            type="button"
+            class="btn"
+            onclick="document.getElementById('searchModal').close()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <!-- Security Settings Modal -->
+    <dialog id="securityModal" class="modal">
+      <div class="modal-box">
+        <h3 class="font-bold text-2xl mb-4">
+          <i class="fas fa-shield-alt tech-text-green mr-2"></i>Security
+          Settings
+        </h3>
+        <div class="space-y-4">
+          <div
+            class="flex items-center justify-between p-4 bg-base-300 rounded"
+          >
+            <div>
+              <p class="font-semibold">Two-Factor Authentication</p>
+              <p class="text-sm opacity-70">Add an extra layer of security</p>
+            </div>
+            <input type="checkbox" class="toggle toggle-success" checked />
+          </div>
+          <div
+            class="flex items-center justify-between p-4 bg-base-300 rounded"
+          >
+            <div>
+              <p class="font-semibold">PIN Protection</p>
+              <p class="text-sm opacity-70">Require PIN for transactions</p>
+            </div>
+            <input type="checkbox" class="toggle toggle-success" checked />
+          </div>
+          <div
+            class="flex items-center justify-between p-4 bg-base-300 rounded"
+          >
+            <div>
+              <p class="font-semibold">Biometric Login</p>
+              <p class="text-sm opacity-70">Use fingerprint or face ID</p>
+            </div>
+            <input type="checkbox" class="toggle toggle-success" checked />
+          </div>
+          <div
+            class="flex items-center justify-between p-4 bg-base-300 rounded"
+          >
+            <div>
+              <p class="font-semibold">Email Verification</p>
+              <p class="text-sm opacity-70">Verify email address</p>
+            </div>
+            <button class="btn btn-sm btn-primary">Verify</button>
+          </div>
+        </div>
+        <div class="modal-action">
+          <button
+            type="button"
+            class="btn"
+            onclick="document.getElementById('securityModal').close()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
+
+    <script src="script/dashboard.js"></script>
   </body>
 </html>

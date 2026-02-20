@@ -22,38 +22,64 @@
         --tech-green: #00ff66;
         --tech-green-dark: #00cc52;
       }
-      
+
       /* Glass Morphism Base */
       body {
-        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+        background: linear-gradient(
+          135deg,
+          #0a0a0a 0%,
+          #1a1a1a 50%,
+          #0a0a0a 100%
+        );
         background-attachment: fixed;
         color: var(--tech-white);
         min-height: 100vh;
         position: relative;
       }
-      
+
       body::before {
-        content: '';
+        content: "";
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: 
-          radial-gradient(circle at 20% 50%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
-          radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.12) 0%, transparent 50%),
-          radial-gradient(circle at 50% 20%, rgba(192, 132, 252, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 40% 80%, rgba(255, 51, 51, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 10% 10%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+        background:
+          radial-gradient(
+            circle at 20% 50%,
+            rgba(147, 51, 234, 0.15) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(168, 85, 247, 0.12) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 20%,
+            rgba(192, 132, 252, 0.1) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 40% 80%,
+            rgba(255, 51, 51, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 10% 10%,
+            rgba(255, 255, 255, 0.05) 0%,
+            transparent 50%
+          );
         pointer-events: none;
         z-index: 0;
       }
-      
-      main, nav {
+
+      main,
+      nav {
         position: relative;
         z-index: 1;
       }
-      
+
       /* Glass Morphism Effect */
       .glass {
         background: rgba(26, 26, 26, 0.4);
@@ -62,7 +88,7 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
       }
-      
+
       .glass-strong {
         background: rgba(26, 26, 26, 0.6);
         backdrop-filter: blur(30px) saturate(180%);
@@ -70,7 +96,7 @@
         border: 1px solid rgba(255, 255, 255, 0.15);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
       }
-      
+
       .glass-light {
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px) saturate(180%);
@@ -78,40 +104,58 @@
         border: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
       }
-      
+
       /* Gradient Cards with Glass */
       .gradient-card {
-        background: linear-gradient(135deg, rgba(26, 26, 26, 0.6) 0%, rgba(42, 42, 42, 0.6) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(26, 26, 26, 0.6) 0%,
+          rgba(42, 42, 42, 0.6) 100%
+        );
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
       }
-      
+
       .gradient-card-green {
-        background: linear-gradient(135deg, rgba(147, 51, 234, 0.4) 0%, rgba(168, 85, 247, 0.4) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.4) 0%,
+          rgba(168, 85, 247, 0.4) 100%
+        );
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         border: 1px solid rgba(192, 132, 252, 0.4);
-        box-shadow: 0 8px 32px 0 rgba(147, 51, 234, 0.3), 0 0 40px rgba(192, 132, 252, 0.1);
+        box-shadow:
+          0 8px 32px 0 rgba(147, 51, 234, 0.3),
+          0 0 40px rgba(192, 132, 252, 0.1);
       }
-      
+
       .gradient-card-red {
-        background: linear-gradient(135deg, rgba(204, 0, 0, 0.3) 0%, rgba(255, 51, 51, 0.3) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(204, 0, 0, 0.3) 0%,
+          rgba(255, 51, 51, 0.3) 100%
+        );
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         border: 1px solid rgba(255, 51, 51, 0.3);
         box-shadow: 0 8px 32px 0 rgba(255, 51, 51, 0.2);
       }
-      
+
       .gradient-card-gray {
-        background: linear-gradient(135deg, rgba(42, 42, 42, 0.5) 0%, rgba(58, 58, 58, 0.5) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(42, 42, 42, 0.5) 0%,
+          rgba(58, 58, 58, 0.5) 100%
+        );
         backdrop-filter: blur(20px) saturate(180%);
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
       }
-      
+
       .tech-bg-black {
         background-color: var(--tech-black);
       }
@@ -136,34 +180,48 @@
       .tech-border {
         border-color: var(--tech-gray-lighter);
       }
-      
+
       /* Cards with Glass */
       .card {
         background: rgba(26, 26, 26, 0.6);
         backdrop-filter: blur(25px) saturate(180%);
         -webkit-backdrop-filter: blur(25px) saturate(180%);
         border: 1px solid rgba(255, 255, 255, 0.15);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 1px rgba(255, 255, 255, 0.1);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0, 0.5),
+          0 0 1px rgba(255, 255, 255, 0.1);
       }
-      
+
       /* Buttons with Glass */
       .btn-primary {
-        background: linear-gradient(135deg, rgba(147, 51, 234, 0.4) 0%, rgba(168, 85, 247, 0.4) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.4) 0%,
+          rgba(168, 85, 247, 0.4) 100%
+        );
         backdrop-filter: blur(10px) saturate(180%);
         -webkit-backdrop-filter: blur(10px) saturate(180%);
         border: 1px solid rgba(192, 132, 252, 0.6);
         color: var(--tech-white);
-        box-shadow: 0 4px 16px 0 rgba(147, 51, 234, 0.3), 0 0 20px rgba(192, 132, 252, 0.2);
+        box-shadow:
+          0 4px 16px 0 rgba(147, 51, 234, 0.3),
+          0 0 20px rgba(192, 132, 252, 0.2);
         font-weight: 600;
       }
       .btn-primary:hover {
-        background: linear-gradient(135deg, rgba(168, 85, 247, 0.5) 0%, rgba(192, 132, 252, 0.5) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(168, 85, 247, 0.5) 0%,
+          rgba(192, 132, 252, 0.5) 100%
+        );
         border-color: rgba(192, 132, 252, 0.8);
-        box-shadow: 0 6px 24px 0 rgba(147, 51, 234, 0.4), 0 0 30px rgba(192, 132, 252, 0.3);
+        box-shadow:
+          0 6px 24px 0 rgba(147, 51, 234, 0.4),
+          0 0 30px rgba(192, 132, 252, 0.3);
         transform: translateY(-2px);
         transition: all 0.3s ease;
       }
-      
+
       .btn-error {
         background: rgba(255, 51, 51, 0.3);
         backdrop-filter: blur(10px) saturate(180%);
@@ -179,7 +237,7 @@
         transform: translateY(-2px);
         transition: all 0.3s ease;
       }
-      
+
       .btn-ghost {
         background: rgba(255, 255, 255, 0.05);
         backdrop-filter: blur(10px);
@@ -190,7 +248,7 @@
         background: rgba(255, 255, 255, 0.1);
         border-color: rgba(255, 255, 255, 0.2);
       }
-      
+
       /* Badges with Glass */
       .badge-success {
         background: rgba(147, 51, 234, 0.4);
@@ -207,18 +265,21 @@
         border: 1px solid rgba(255, 51, 51, 0.5);
         color: var(--tech-red);
       }
-      
+
       /* Navbar with Glass */
       .navbar {
         background: rgba(26, 26, 26, 0.75) !important;
         backdrop-filter: blur(35px) saturate(180%);
         -webkit-backdrop-filter: blur(35px) saturate(180%);
         border-bottom: 1px solid rgba(192, 132, 252, 0.2);
-        box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.4), 0 0 1px rgba(192, 132, 252, 0.1);
+        box-shadow:
+          0 4px 20px 0 rgba(0, 0, 0, 0.4),
+          0 0 1px rgba(192, 132, 252, 0.1);
       }
-      
+
       /* Inputs with Glass */
-      .input, .select {
+      .input,
+      .select {
         background: rgba(42, 42, 42, 0.6);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
@@ -226,16 +287,23 @@
         color: var(--tech-white);
         font-weight: 500;
       }
-      .input:focus, .select:focus {
+      .input:focus,
+      .select:focus {
         background: rgba(42, 42, 42, 0.8);
         border-color: rgba(192, 132, 252, 0.6);
         outline: none;
-        box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.2), 0 0 20px rgba(192, 132, 252, 0.1);
+        box-shadow:
+          0 0 0 3px rgba(147, 51, 234, 0.2),
+          0 0 20px rgba(192, 132, 252, 0.1);
       }
-      
+
       /* Progress Bars */
       .progress-success {
-        background: linear-gradient(90deg, rgba(147, 51, 234, 0.5) 0%, rgba(192, 132, 252, 0.5) 100%);
+        background: linear-gradient(
+          90deg,
+          rgba(147, 51, 234, 0.5) 0%,
+          rgba(192, 132, 252, 0.5) 100%
+        );
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
         box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
@@ -245,31 +313,34 @@
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
       }
-      
+
       /* Modals with Glass */
       .modal-box {
         background: rgba(26, 26, 26, 0.85);
         backdrop-filter: blur(45px) saturate(180%);
         -webkit-backdrop-filter: blur(45px) saturate(180%);
         border: 1px solid rgba(192, 132, 252, 0.3);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6), 0 0 40px rgba(147, 51, 234, 0.2);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0, 0.6),
+          0 0 40px rgba(147, 51, 234, 0.2);
       }
-      
+
       .modal-backdrop {
         background: rgba(0, 0, 0, 0.6);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
       }
-      
+
       /* Dropdowns with Glass */
-      .dropdown-content, .menu {
+      .dropdown-content,
+      .menu {
         background: rgba(26, 26, 26, 0.8);
         backdrop-filter: blur(30px) saturate(180%);
         -webkit-backdrop-filter: blur(30px) saturate(180%);
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
       }
-      
+
       /* Table with Glass */
       .table {
         background: transparent;
@@ -291,7 +362,7 @@
         -webkit-backdrop-filter: blur(15px);
         border-left: 3px solid rgba(192, 132, 252, 0.5);
       }
-      
+
       /* Quick Action Cards */
       .card.bg-base-200 {
         background: rgba(42, 42, 42, 0.5);
@@ -304,10 +375,12 @@
       .card.bg-base-200:hover {
         background: rgba(42, 42, 42, 0.7);
         border-color: rgba(192, 132, 252, 0.4);
-        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5), 0 0 30px rgba(147, 51, 234, 0.2);
+        box-shadow:
+          0 8px 32px 0 rgba(0, 0, 0, 0.5),
+          0 0 30px rgba(147, 51, 234, 0.2);
         transform: translateY(-4px);
       }
-      
+
       /* Footer with Glass */
       footer {
         background: rgba(26, 26, 26, 0.5);
@@ -315,16 +388,20 @@
         -webkit-backdrop-filter: blur(20px) saturate(180%);
         border-top: 1px solid rgba(255, 255, 255, 0.1);
       }
-      
+
       /* Avatar with Glass */
       .avatar > div {
-        background: linear-gradient(135deg, rgba(147, 51, 234, 0.5) 0%, rgba(192, 132, 252, 0.5) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.5) 0%,
+          rgba(192, 132, 252, 0.5) 100%
+        );
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border: 1px solid rgba(192, 132, 252, 0.6);
         box-shadow: 0 0 15px rgba(192, 132, 252, 0.3);
       }
-      
+
       /* Notification with Glass */
       .tech-notification {
         background: rgba(26, 26, 26, 0.9) !important;
@@ -333,40 +410,51 @@
         border: 1px solid rgba(255, 255, 255, 0.15) !important;
         box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5) !important;
       }
-      
+
       /* Toggle with Glass */
       .toggle {
         background: rgba(42, 42, 42, 0.5);
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
       .toggle:checked {
-        background: linear-gradient(135deg, rgba(147, 51, 234, 0.5) 0%, rgba(192, 132, 252, 0.5) 100%);
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.5) 0%,
+          rgba(192, 132, 252, 0.5) 100%
+        );
         border-color: rgba(192, 132, 252, 0.6);
         box-shadow: 0 0 10px rgba(192, 132, 252, 0.4);
       }
-      
+
       /* Enhanced Typography */
-      h1, h2, h3 {
+      h1,
+      h2,
+      h3 {
         font-weight: 700;
         letter-spacing: -0.02em;
       }
-      
+
       /* Enhanced Icons */
       i {
         filter: drop-shadow(0 0 3px rgba(192, 132, 252, 0.3));
       }
-      
+
       /* Smooth transitions */
       * {
-        transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        transition:
+          background-color 0.3s ease,
+          border-color 0.3s ease,
+          box-shadow 0.3s ease,
+          transform 0.3s ease;
       }
-      
+
       /* Enhanced Focus States */
-      button:focus-visible, a:focus-visible {
+      button:focus-visible,
+      a:focus-visible {
         outline: 2px solid rgba(192, 132, 252, 0.6);
         outline-offset: 2px;
       }
-      
+
       /* Better Contrast for Text */
       .text-white {
         text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -402,9 +490,7 @@
   <body class="min-h-screen">
     <!-- Navigation Bar -->
     <nav class="sticky top-0 z-50">
-      <div
-        class="navbar bg-base-100 shadow-[0_0_17px_rgba(255,255,255,0.18)]"
-      >
+      <div class="navbar bg-base-100 shadow-[0_0_17px_rgba(255,255,255,0.18)]">
         <div class="navbar-start">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
@@ -414,11 +500,29 @@
               tabindex="0"
               class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow-lg"
             >
-              <li><a id="navDashboard"><i class="fas fa-home mr-2"></i> Dashboard</a></li>
-              <li><a id="navAccounts"><i class="fas fa-wallet mr-2"></i> My Accounts</a></li>
-              <li><a id="navTransactions"><i class="fas fa-history mr-2"></i> Transactions</a></li>
-              <li><a id="navSettings"><i class="fas fa-cog mr-2"></i> Settings</a></li>
-              <li><a id="navSupport"><i class="fas fa-headset mr-2"></i> Support</a></li>
+              <li>
+                <a id="navDashboard"
+                  ><i class="fas fa-home mr-2"></i> Dashboard</a
+                >
+              </li>
+              <li>
+                <a id="navAccounts"
+                  ><i class="fas fa-wallet mr-2"></i> My Accounts</a
+                >
+              </li>
+              <li>
+                <a id="navTransactions"
+                  ><i class="fas fa-history mr-2"></i> Transactions</a
+                >
+              </li>
+              <li>
+                <a id="navSettings"><i class="fas fa-cog mr-2"></i> Settings</a>
+              </li>
+              <li>
+                <a id="navSupport"
+                  ><i class="fas fa-headset mr-2"></i> Support</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -429,15 +533,21 @@
           </a>
         </div>
         <div class="navbar-end gap-2">
-          <button id="searchBtn" class="btn btn-ghost btn-circle" title="Search">
+          <button
+            id="searchBtn"
+            class="btn btn-ghost btn-circle"
+            title="Search"
+          >
             <i class="fas fa-search text-lg"></i>
           </button>
           <div class="dropdown dropdown-end">
             <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
-            <div class="indicator">
+              <div class="indicator">
                 <i class="fas fa-bell text-lg"></i>
-                <span class="badge badge-xs badge-success indicator-item"></span>
-            </div>
+                <span
+                  class="badge badge-xs badge-success indicator-item"
+                ></span>
+              </div>
             </div>
             <ul
               tabindex="0"
@@ -458,15 +568,23 @@
                 <a>
                   <div class="flex flex-col">
                     <span class="font-semibold">Bill Reminder</span>
-                    <span class="text-xs opacity-70">Electricity bill due in 2 days</span>
+                    <span class="text-xs opacity-70"
+                      >Electricity bill due in 2 days</span
+                    >
                   </div>
                 </a>
               </li>
             </ul>
           </div>
           <div class="dropdown dropdown-end">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-              <div class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center">
+            <div
+              tabindex="0"
+              role="button"
+              class="btn btn-ghost btn-circle avatar"
+            >
+              <div
+                class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center"
+              >
                 <span class="text-lg font-bold">JD</span>
               </div>
             </div>
@@ -477,16 +595,24 @@
               <li class="menu-title">
                 <span>John Doe</span>
               </li>
-              <li><a id="profileBtn"><i class="fas fa-user mr-2"></i> Profile</a></li>
-              <li><a id="securityBtn"><i class="fas fa-shield-alt mr-2"></i> Security</a></li>
-              <li><a id="settingsBtn"><i class="fas fa-cog mr-2"></i> Settings</a></li>
               <li>
-                <a onclick="window.location.href='index.html'">
+                <a id="profileBtn"><i class="fas fa-user mr-2"></i> Profile</a>
+              </li>
+              <li>
+                <a id="securityBtn"
+                  ><i class="fas fa-shield-alt mr-2"></i> Security</a
+                >
+              </li>
+              <li>
+                <a id="settingsBtn"><i class="fas fa-cog mr-2"></i> Settings</a>
+              </li>
+              <li>
+                <a onclick="window.location.href = 'index.html'">
                   <i class="fas fa-sign-out-alt mr-2"></i> Log Out
                 </a>
               </li>
             </ul>
-            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -499,11 +625,11 @@
           <div>
             <h1 class="text-3xl font-bold text-white mb-2">
               Welcome back, <span class="tech-text-green">John Doe</span>
-          </h1>
+            </h1>
             <p class="text-sm opacity-70">
               Manage your finances with ease and security
-          </p>
-        </div>
+            </p>
+          </div>
           <div class="text-right">
             <p class="text-sm opacity-70 mb-1">Account Number</p>
             <p class="text-lg font-semibold">****1234</p>
@@ -602,7 +728,9 @@
             class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             <div class="card-body items-center text-center p-4">
-              <div class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50">
+              <div
+                class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50"
+              >
                 <i class="fas fa-plus-circle text-3xl tech-text-purple"></i>
               </div>
               <h3 class="font-semibold">Add Money</h3>
@@ -628,7 +756,9 @@
             class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             <div class="card-body items-center text-center p-4">
-              <div class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50">
+              <div
+                class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50"
+              >
                 <i class="fas fa-money-bill-wave text-3xl tech-text-purple"></i>
               </div>
               <h3 class="font-semibold">Cash Out</h3>
@@ -642,7 +772,9 @@
           >
             <div class="card-body items-center text-center p-4">
               <div class="bg-red-500/20 rounded-full p-4 mb-2">
-                <i class="fas fa-file-invoice-dollar text-3xl tech-text-red"></i>
+                <i
+                  class="fas fa-file-invoice-dollar text-3xl tech-text-red"
+                ></i>
               </div>
               <h3 class="font-semibold">Pay Bill</h3>
             </div>
@@ -654,7 +786,9 @@
             class="card bg-base-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             <div class="card-body items-center text-center p-4">
-              <div class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50">
+              <div
+                class="bg-purple-500/30 rounded-full p-4 mb-2 border border-purple-500/50"
+              >
                 <i class="fas fa-gift text-3xl tech-text-purple"></i>
               </div>
               <h3 class="font-semibold">Get Bonus</h3>
@@ -684,9 +818,15 @@
             <div class="card-body">
               <div class="flex items-center justify-between mb-4">
                 <h2 class="text-2xl font-bold text-white">
-                  <i class="fas fa-list mr-2 tech-text-green"></i>Recent Transactions
+                  <i class="fas fa-list mr-2 tech-text-green"></i>Recent
+                  Transactions
                 </h2>
-                <button id="viewAllTransactionsBtn" class="btn btn-sm btn-primary">View All</button>
+                <button
+                  id="viewAllTransactionsBtn"
+                  class="btn btn-sm btn-primary"
+                >
+                  View All
+                </button>
               </div>
               <div class="overflow-x-auto">
                 <table class="table">
@@ -704,7 +844,9 @@
                       <td>
                         <div class="flex items-center gap-3">
                           <div class="avatar">
-                            <div class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center">
+                            <div
+                              class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center"
+                            >
                               <i class="fas fa-user"></i>
                             </div>
                           </div>
@@ -720,14 +862,18 @@
                       <td class="tech-text-green font-semibold">+$500.00</td>
                       <td>Dec 15, 2024</td>
                       <td>
-                        <span class="badge badge-success badge-sm">Completed</span>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <div class="flex items-center gap-3">
                           <div class="avatar">
-                            <div class="w-10 rounded-full bg-red-500 text-white flex items-center justify-center">
+                            <div
+                              class="w-10 rounded-full bg-red-500 text-white flex items-center justify-center"
+                            >
                               <i class="fas fa-bolt"></i>
                             </div>
                           </div>
@@ -743,14 +889,18 @@
                       <td class="tech-text-red font-semibold">-$120.50</td>
                       <td>Dec 14, 2024</td>
                       <td>
-                        <span class="badge badge-success badge-sm">Completed</span>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <div class="flex items-center gap-3">
                           <div class="avatar">
-                            <div class="w-10 rounded-full bg-white text-black flex items-center justify-center">
+                            <div
+                              class="w-10 rounded-full bg-white text-black flex items-center justify-center"
+                            >
                               <i class="fas fa-paper-plane"></i>
                             </div>
                           </div>
@@ -766,14 +916,18 @@
                       <td class="text-red-500 font-semibold">-$250.00</td>
                       <td>Dec 13, 2024</td>
                       <td>
-                        <span class="badge badge-success badge-sm">Completed</span>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <div class="flex items-center gap-3">
                           <div class="avatar">
-                            <div class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center">
+                            <div
+                              class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center"
+                            >
                               <i class="fas fa-gift"></i>
                             </div>
                           </div>
@@ -789,14 +943,18 @@
                       <td class="tech-text-green font-semibold">+$25.00</td>
                       <td>Dec 12, 2024</td>
                       <td>
-                        <span class="badge badge-success badge-sm">Completed</span>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
                       </td>
                     </tr>
                     <tr>
                       <td>
                         <div class="flex items-center gap-3">
                           <div class="avatar">
-                            <div class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center">
+                            <div
+                              class="w-10 rounded-full bg-green-500 text-black flex items-center justify-center"
+                            >
                               <i class="fas fa-plus"></i>
                             </div>
                           </div>
@@ -812,7 +970,9 @@
                       <td class="tech-text-green font-semibold">+$1,000.00</td>
                       <td>Dec 10, 2024</td>
                       <td>
-                        <span class="badge badge-success badge-sm">Completed</span>
+                        <span class="badge badge-success badge-sm"
+                          >Completed</span
+                        >
                       </td>
                     </tr>
                   </tbody>
@@ -834,23 +994,41 @@
                 <div>
                   <div class="flex justify-between mb-1">
                     <span class="text-sm">Income</span>
-                    <span class="text-sm font-semibold tech-text-green">$2,500</span>
+                    <span class="text-sm font-semibold tech-text-green"
+                      >$2,500</span
+                    >
                   </div>
-                  <progress class="progress progress-success" value="75" max="100"></progress>
+                  <progress
+                    class="progress progress-success"
+                    value="75"
+                    max="100"
+                  ></progress>
                 </div>
                 <div>
                   <div class="flex justify-between mb-1">
                     <span class="text-sm">Expenses</span>
-                    <span class="text-sm font-semibold tech-text-red">$1,200</span>
+                    <span class="text-sm font-semibold tech-text-red"
+                      >$1,200</span
+                    >
                   </div>
-                  <progress class="progress progress-error" value="45" max="100"></progress>
+                  <progress
+                    class="progress progress-error"
+                    value="45"
+                    max="100"
+                  ></progress>
                 </div>
                 <div>
                   <div class="flex justify-between mb-1">
                     <span class="text-sm">Savings</span>
-                    <span class="text-sm font-semibold tech-text-green">$1,300</span>
+                    <span class="text-sm font-semibold tech-text-green"
+                      >$1,300</span
+                    >
                   </div>
-                  <progress class="progress progress-info" value="65" max="100"></progress>
+                  <progress
+                    class="progress progress-info"
+                    value="65"
+                    max="100"
+                  ></progress>
                 </div>
               </div>
             </div>
@@ -860,7 +1038,8 @@
           <div class="card bg-base-200 shadow-xl">
             <div class="card-body">
               <h2 class="text-xl font-bold text-white mb-4">
-                <i class="fas fa-shield-alt mr-2 tech-text-green"></i>Security Status
+                <i class="fas fa-shield-alt mr-2 tech-text-green"></i>Security
+                Status
               </h2>
               <div class="space-y-3">
                 <div class="flex items-center justify-between">
@@ -892,7 +1071,10 @@
                   <span class="badge badge-warning badge-sm">Pending</span>
                 </div>
               </div>
-              <button id="manageSecurityBtn" class="btn btn-primary btn-sm mt-4 w-full">
+              <button
+                id="manageSecurityBtn"
+                class="btn btn-primary btn-sm mt-4 w-full"
+              >
                 <i class="fas fa-cog mr-2"></i>Manage Security
               </button>
             </div>
@@ -905,7 +1087,10 @@
                 <i class="fas fa-link mr-2 tech-text-green"></i>Quick Links
               </h2>
               <div class="space-y-2">
-                <a id="statementsBtn" class="btn btn-ghost justify-start w-full">
+                <a
+                  id="statementsBtn"
+                  class="btn btn-ghost justify-start w-full"
+                >
                   <i class="fas fa-file-invoice mr-2"></i>Statements
                 </a>
                 <a id="cardsBtn" class="btn btn-ghost justify-start w-full">
@@ -914,7 +1099,10 @@
                 <a id="privacyBtn" class="btn btn-ghost justify-start w-full">
                   <i class="fas fa-user-shield mr-2"></i>Privacy Settings
                 </a>
-                <a id="supportCenterBtn" class="btn btn-ghost justify-start w-full">
+                <a
+                  id="supportCenterBtn"
+                  class="btn btn-ghost justify-start w-full"
+                >
                   <i class="fas fa-headset mr-2"></i>Support Center
                 </a>
               </div>
@@ -929,7 +1117,8 @@
         <div class="card bg-base-200 shadow-xl">
           <div class="card-body">
             <h2 class="text-xl font-bold text-white mb-4">
-              <i class="fas fa-chart-line mr-2 tech-text-green"></i>Account Activity
+              <i class="fas fa-chart-line mr-2 tech-text-green"></i>Account
+              Activity
             </h2>
             <div class="space-y-3">
               <div class="flex justify-between items-center">
@@ -955,14 +1144,18 @@
               <i class="fas fa-wallet mr-2 tech-text-green"></i>Payment Methods
             </h2>
             <div class="space-y-3">
-              <div class="flex items-center justify-between p-2 bg-base-300 rounded">
+              <div
+                class="flex items-center justify-between p-2 bg-base-300 rounded"
+              >
                 <div class="flex items-center gap-2">
                   <i class="fas fa-credit-card tech-text-green"></i>
                   <span class="text-sm">Visa •••• 1234</span>
                 </div>
                 <span class="badge badge-success badge-sm">Active</span>
               </div>
-              <div class="flex items-center justify-between p-2 bg-base-300 rounded">
+              <div
+                class="flex items-center justify-between p-2 bg-base-300 rounded"
+              >
                 <div class="flex items-center gap-2">
                   <i class="fas fa-mobile-alt tech-text-green"></i>
                   <span class="text-sm">Mobile Banking</span>
@@ -977,17 +1170,22 @@
         <div class="card bg-base-200 shadow-xl">
           <div class="card-body">
             <h2 class="text-xl font-bold text-white mb-4">
-              <i class="fas fa-calendar-alt mr-2 tech-text-green"></i>Upcoming Bills
+              <i class="fas fa-calendar-alt mr-2 tech-text-green"></i>Upcoming
+              Bills
             </h2>
             <div class="space-y-3">
-              <div class="flex justify-between items-center p-2 bg-base-300 rounded">
+              <div
+                class="flex justify-between items-center p-2 bg-base-300 rounded"
+              >
                 <div>
                   <p class="text-sm font-semibold">Electricity</p>
                   <p class="text-xs opacity-70">Due in 2 days</p>
                 </div>
                 <span class="font-bold tech-text-red">$120.50</span>
               </div>
-              <div class="flex justify-between items-center p-2 bg-base-300 rounded">
+              <div
+                class="flex justify-between items-center p-2 bg-base-300 rounded"
+              >
                 <div>
                   <p class="text-sm font-semibold">Internet</p>
                   <p class="text-xs opacity-70">Due in 5 days</p>
@@ -1038,7 +1236,11 @@
             <label class="label">
               <span class="label-text font-semibold">Payment Method</span>
             </label>
-            <select id="addMoneyMethod" class="select select-bordered w-full" required>
+            <select
+              id="addMoneyMethod"
+              class="select select-bordered w-full"
+              required
+            >
               <option value="">Select payment method</option>
               <option value="bank">Bank Transfer</option>
               <option value="card">Credit/Debit Card</option>
@@ -1060,7 +1262,11 @@
             />
           </div>
           <div class="modal-action">
-            <button type="button" class="btn" onclick="document.getElementById('addMoneyModal').close()">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('addMoneyModal').close()"
+            >
               Cancel
             </button>
             <button type="submit" class="btn btn-primary">
@@ -1083,7 +1289,9 @@
         <form id="sendMoneyForm">
           <div class="form-control mb-4">
             <label class="label">
-              <span class="label-text font-semibold">Recipient Mobile Number</span>
+              <span class="label-text font-semibold"
+                >Recipient Mobile Number</span
+              >
             </label>
             <input
               type="text"
@@ -1124,7 +1332,11 @@
             />
           </div>
           <div class="modal-action">
-            <button type="button" class="btn" onclick="document.getElementById('sendMoneyModal').close()">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('sendMoneyModal').close()"
+            >
               Cancel
             </button>
             <button type="submit" class="btn btn-primary">
@@ -1190,7 +1402,11 @@
             <span>Cash out charge: 1.5% of the amount</span>
           </div>
           <div class="modal-action">
-            <button type="button" class="btn" onclick="document.getElementById('cashOutModal').close()">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('cashOutModal').close()"
+            >
               Cancel
             </button>
             <button type="submit" class="btn btn-primary">
@@ -1215,7 +1431,11 @@
             <label class="label">
               <span class="label-text font-semibold">Bill Type</span>
             </label>
-            <select id="payBillType" class="select select-bordered w-full" required>
+            <select
+              id="payBillType"
+              class="select select-bordered w-full"
+              required
+            >
               <option value="">Select bill type</option>
               <option value="electricity">Electricity</option>
               <option value="water">Water</option>
@@ -1265,7 +1485,11 @@
             />
           </div>
           <div class="modal-action">
-            <button type="button" class="btn" onclick="document.getElementById('payBillModal').close()">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('payBillModal').close()"
+            >
               Cancel
             </button>
             <button type="submit" class="btn btn-primary">
@@ -1288,7 +1512,10 @@
         <div class="text-center mb-6">
           <div class="text-6xl mb-4">🎁</div>
           <p class="text-lg mb-2">Claim Your Bonus Reward!</p>
-          <p class="text-sm opacity-70">You have a bonus of <span class="font-bold tech-text-green">$25.00</span> available</p>
+          <p class="text-sm opacity-70">
+            You have a bonus of
+            <span class="font-bold tech-text-green">$25.00</span> available
+          </p>
         </div>
         <form id="getBonusForm">
           <div class="form-control mb-4">
@@ -1306,7 +1533,11 @@
             />
           </div>
           <div class="modal-action">
-            <button type="button" class="btn" onclick="document.getElementById('getBonusModal').close()">
+            <button
+              type="button"
+              class="btn"
+              onclick="document.getElementById('getBonusModal').close()"
+            >
               Cancel
             </button>
             <button type="submit" class="btn btn-primary">
@@ -1334,7 +1565,11 @@
         />
         <div id="searchResults" class="mt-4 space-y-2"></div>
         <div class="modal-action">
-          <button type="button" class="btn" onclick="document.getElementById('searchModal').close()">
+          <button
+            type="button"
+            class="btn"
+            onclick="document.getElementById('searchModal').close()"
+          >
             Close
           </button>
         </div>
@@ -1348,31 +1583,40 @@
     <dialog id="securityModal" class="modal">
       <div class="modal-box">
         <h3 class="font-bold text-2xl mb-4">
-          <i class="fas fa-shield-alt tech-text-green mr-2"></i>Security Settings
+          <i class="fas fa-shield-alt tech-text-green mr-2"></i>Security
+          Settings
         </h3>
         <div class="space-y-4">
-          <div class="flex items-center justify-between p-4 bg-base-300 rounded">
+          <div
+            class="flex items-center justify-between p-4 bg-base-300 rounded"
+          >
             <div>
               <p class="font-semibold">Two-Factor Authentication</p>
               <p class="text-sm opacity-70">Add an extra layer of security</p>
             </div>
             <input type="checkbox" class="toggle toggle-success" checked />
           </div>
-          <div class="flex items-center justify-between p-4 bg-base-300 rounded">
+          <div
+            class="flex items-center justify-between p-4 bg-base-300 rounded"
+          >
             <div>
               <p class="font-semibold">PIN Protection</p>
               <p class="text-sm opacity-70">Require PIN for transactions</p>
             </div>
             <input type="checkbox" class="toggle toggle-success" checked />
           </div>
-          <div class="flex items-center justify-between p-4 bg-base-300 rounded">
+          <div
+            class="flex items-center justify-between p-4 bg-base-300 rounded"
+          >
             <div>
               <p class="font-semibold">Biometric Login</p>
               <p class="text-sm opacity-70">Use fingerprint or face ID</p>
             </div>
             <input type="checkbox" class="toggle toggle-success" checked />
           </div>
-          <div class="flex items-center justify-between p-4 bg-base-300 rounded">
+          <div
+            class="flex items-center justify-between p-4 bg-base-300 rounded"
+          >
             <div>
               <p class="font-semibold">Email Verification</p>
               <p class="text-sm opacity-70">Verify email address</p>
@@ -1381,7 +1625,11 @@
           </div>
         </div>
         <div class="modal-action">
-          <button type="button" class="btn" onclick="document.getElementById('securityModal').close()">
+          <button
+            type="button"
+            class="btn"
+            onclick="document.getElementById('securityModal').close()"
+          >
             Close
           </button>
         </div>
